@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all .5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all .5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
 @font-face {
   font-family: 'Intro';
   src: url("../font/Intro.otf");
@@ -31,7 +53,7 @@ h3 {
   h3.text-subtitle {
     padding: .2rem 1rem;
     background: rgba(73, 73, 73, 0.5);
-    color: #FFDC0B; }
+    color: #17C67B; }
 
 a {
   color: #fff;
@@ -96,7 +118,7 @@ main {
         transform: rotate(-90deg);
         text-align: center; }
         main .home-header .left-social a:hover {
-          color: #FFDC0B;
+          color: #17C67B;
           transition: all .5s ease-out; }
     main .home-header .scroll-next {
       position: absolute;
