@@ -1,3 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@font-face {
+  font-family: 'Intro';
+  src: url("../font/Intro.otf");
+  src: url("../font/Intro.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
   background: #444;
-  color: white; }
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2; }
+
+h1,
+h2,
+h3 {
+  font-weight: 400; }
+  h1.text-title,
+  h2.text-title,
+  h3.text-title {
+    font-size: 5rem;
+    font-family: Intro,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+  h1.text-subtitle,
+  h2.text-subtitle,
+  h3.text-subtitle {
+    padding: .2rem 1rem;
+    background: rgba(73, 73, 73, 0.5);
+    color: #FFDC0B; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+main {
+  height: 100%; }
+  main .home-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; }
+    main .home-header.home-header {
+      background-image: url(../img/headerbg.jpg);
+      background-size: cover; }
+      main .home-header.home-header:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(68, 68, 68, 0.9); }
+    main .home-header .home-content {
+      position: absolute;
+      width: 80%;
+      height: 70%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-template-columns: 45% 55%;
+      z-index: 1; }
+      main .home-header .home-content .home-image {
+        align-self: end;
+        transform-origin: bottom; }
+        main .home-header .home-content .home-image img {
+          max-width: 650px; }
+      main .home-header .home-content .home-text {
+        align-self: end;
+        text-align: right;
+        margin-bottom: 50px; }
+    main .home-header .left-social {
+      position: absolute;
+      height: 450px;
+      top: 0;
+      bottom: 0;
+      left: 15px;
+      margin: auto;
+      display: flex;
+      flex-flow: column-reverse nowrap;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1; }
+      main .home-header .left-social a {
+        transform-origin: center;
+        transform: rotate(-90deg);
+        text-align: center; }
+        main .home-header .left-social a:hover {
+          color: #FFDC0B;
+          transition: all .5s ease-out; }
+    main .home-header .scroll-next {
+      position: absolute;
+      bottom: 0;
+      width: auto;
+      height: 180px;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 1; }
+      main .home-header .scroll-next:hover {
+        bottom: -20px;
+        transition: all .5s ease-out; }
+      main .home-header .scroll-next a h6 {
+        transform-origin: center;
+        transform: rotate(90deg);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0 10px 0 0;
+        padding-top: 0 !important; }
+      main .home-header .scroll-next span {
+        width: 1.5px;
+        height: 100px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0; }
