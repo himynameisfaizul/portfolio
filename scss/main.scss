@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @font-face {
     font-family: 'Intro';
@@ -31,6 +32,9 @@ h3 {
     &.text-title{
         font-size: 5rem;
         font-family: Intro,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        @include mediaMd{
+            font-size: 4rem;
+        }
     }
 
     &.text-subtitle{
@@ -72,25 +76,44 @@ main{
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            display: grid;
-            grid-template-columns: 45% 55%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
             z-index: 1;
             //overflow: hidden;
 
+            @include mediaMd{
+                //background: $accent-color;
+                width: 70%;
+                flex-flow: column-reverse;
+
+            }
+
             .home-image{
                 //background: blueviolet;
-                align-self: end;
-                transform-origin: bottom;
+                //align-self: end;
+                //transform-origin: bottom;
                 img{
-                    max-width: 650px;
+                    width: 680px;
+
+                    @include mediaMd{
+                        width: 350px;
+                    }
                 }
             }
 
             .home-text{
                 //background: green;
-                align-self: end;
+                align-self:flex-end ;
                 text-align: right;
                 margin-bottom: 50px;
+
+                @include mediaMd{
+                    align-self: auto ;
+                    text-align: center;
+                    margin-bottom: 0px;
+                }
             }
         }
 

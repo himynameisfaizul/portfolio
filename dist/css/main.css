@@ -88,6 +88,27 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 768px) {
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait150.jpg");
+      width: 150px;
+      height: 150px; } }
+
 @font-face {
   font-family: 'Intro';
   src: url("../font/Intro.otf");
@@ -115,6 +136,11 @@ h3 {
   h3.text-title {
     font-size: 5rem;
     font-family: Intro,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+    @media screen and (max-width: 768px) {
+      h1.text-title,
+      h2.text-title,
+      h3.text-title {
+        font-size: 4rem; } }
   h1.text-subtitle,
   h2.text-subtitle,
   h3.text-subtitle {
@@ -156,18 +182,29 @@ main {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: grid;
-      grid-template-columns: 45% 55%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
       z-index: 1; }
-      main .home-header .home-content .home-image {
-        align-self: end;
-        transform-origin: bottom; }
-        main .home-header .home-content .home-image img {
-          max-width: 650px; }
+      @media screen and (max-width: 768px) {
+        main .home-header .home-content {
+          width: 70%;
+          flex-flow: column-reverse; } }
+      main .home-header .home-content .home-image img {
+        width: 680px; }
+        @media screen and (max-width: 768px) {
+          main .home-header .home-content .home-image img {
+            width: 350px; } }
       main .home-header .home-content .home-text {
-        align-self: end;
+        align-self: flex-end;
         text-align: right;
         margin-bottom: 50px; }
+        @media screen and (max-width: 768px) {
+          main .home-header .home-content .home-text {
+            align-self: auto;
+            text-align: center;
+            margin-bottom: 0px; } }
     main .home-header .left-social {
       position: absolute;
       height: 450px;
