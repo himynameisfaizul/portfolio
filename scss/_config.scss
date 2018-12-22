@@ -7,6 +7,9 @@ $background-opacity:0.9;
 @mixin easeOut {
     transition: all .5s ease-out;
 }
+@mixin easeOut2 {
+    transition: all .1s ease-out;
+}
 
 @mixin background {
     @if $show-home-image{
@@ -26,6 +29,15 @@ $background-opacity:0.9;
             }
         }
         
+    }
+}
+
+//set text color
+@function set-text-color($color){
+    @if (lightness($color)>40){
+        @return #000;
+    }@else{
+        @return #fff;
     }
 }
 

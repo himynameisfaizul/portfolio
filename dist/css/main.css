@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -123,29 +124,29 @@
 
 body {
   background: #444;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  font-family: Comfortaa,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.2; }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-weight: 400; }
   h1.text-title,
   h2.text-title,
-  h3.text-title {
-    font-size: 5rem;
+  h3.text-title,
+  h4.text-title {
+    font-size: 4rem;
+    font-size: 6vw;
     font-family: Intro,"Helvetica Neue",Helvetica,Arial,sans-serif; }
-    @media screen and (max-width: 768px) {
-      h1.text-title,
-      h2.text-title,
-      h3.text-title {
-        font-size: 4rem; } }
   h1.text-subtitle,
   h2.text-subtitle,
-  h3.text-subtitle {
+  h3.text-subtitle,
+  h4.text-subtitle {
     padding: .2rem 1rem;
     background: rgba(73, 73, 73, 0.5);
+    font-family: Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #17C67B; }
 
 a {
@@ -158,7 +159,8 @@ header {
   width: 100%; }
 
 main {
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
   main .home-header {
     position: relative;
     width: 100%;
@@ -224,6 +226,20 @@ main {
         main .home-header .left-social a:hover {
           color: #17C67B;
           transition: all .5s ease-out; }
+          main .home-header .left-social a:hover:after {
+            opacity: 1;
+            transform: skew(-30deg);
+            transition: all .1s ease-out; }
+        main .home-header .left-social a:after {
+          content: '';
+          position: absolute;
+          background: white;
+          width: 80%;
+          height: 30px;
+          top: -30%;
+          left: 10%;
+          z-index: -1;
+          opacity: 0; }
     main .home-header .scroll-next {
       position: absolute;
       bottom: 0;
@@ -252,3 +268,265 @@ main {
         right: 0;
         margin: auto;
         bottom: 0; }
+  main .card {
+    height: 100vh;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1; }
+    main .card:nth-child(odd) .card-img, main .card:nth-child(odd) .card-stroke, main .card:nth-child(odd) .card-number {
+      left: 0; }
+    main .card:nth-child(odd) .card-headline {
+      right: 0;
+      text-align: right; }
+    main .card:nth-child(even) .card-img, main .card:nth-child(even) .card-stroke, main .card:nth-child(even) .card-number {
+      right: 0; }
+    main .card:nth-child(even) .card-headline {
+      left: 0; }
+    main .card .card-link {
+      text-decoration: none;
+      display: block;
+      position: relative;
+      height: 56%;
+      width: 66.6666666667%;
+      z-index: 10; }
+      main .card .card-link .card-headline {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        line-height: 1; }
+        main .card .card-link .card-headline .card-title {
+          color: #fff;
+          font-size: 64px;
+          font-size: 4rem;
+          font-size: 6vw;
+          font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-weight: 700; }
+        main .card .card-link .card-headline .card-subtitle {
+          color: #fff;
+          font-size: 32px;
+          font-size: 2rem;
+          font-size: 2.5vw;
+          font-family: Comfortaa;
+          font-weight: 100; }
+      main .card .card-link .card-stroke {
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 25%;
+        height: 10px; }
+      main .card .card-link .card-number {
+        color: #fff;
+        position: absolute;
+        margin: 0 20px;
+        bottom: 20px;
+        line-height: .75;
+        font-size: 128px;
+        font-size: 8rem;
+        font-family: Intro,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 700; }
+      main .card .card-link .card-img {
+        position: absolute;
+        top: 0;
+        width: 75%;
+        height: 100%;
+        z-index: -1;
+        background: #000;
+        overflow: hidden; }
+        main .card .card-link .card-img .card-img-para {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+          main .card .card-link .card-img .card-img-para .imgcrop {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: .8; }
+            main .card .card-link .card-img .card-img-para .imgcrop:hover {
+              opacity: 1;
+              transition: all .5s ease-out; }
+            main .card .card-link .card-img .card-img-para .imgcrop img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 103%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+    main .card .card-bigtitle {
+      position: absolute;
+      top: 50%;
+      left: -9000px;
+      right: -9000px;
+      text-align: center;
+      -webkit-transform: translateY(-55%);
+      transform: translateY(-55%);
+      font-size: 500px;
+      font-size: 31.25rem;
+      white-space: nowrap;
+      color: #000;
+      opacity: .1;
+      font-weight: 700;
+      font-family: "Montserrat Alternates","Helvetica Neue",Helvetica,Arial,sans-serif;
+      text-transform: lowercase; }
+  main .contact {
+    background: #111111;
+    height: 40vh;
+    text-align: center;
+    padding-top: 40px; }
+    main .contact .text-subtitle {
+      background: none; }
+    main .contact button {
+      background: #17C67B;
+      padding: 20px 20px;
+      margin: 30px 0 40px 0;
+      border: none; }
+      main .contact button h5 {
+        color: #fff; }
+    main .contact .copyright {
+      letter-spacing: 2px; }
+  main .about-header {
+    background: #23282a;
+    height: 100vh;
+    position: relative;
+    z-index: 1; }
+    main .about-header .abhead-bg-black {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #1e1e1e;
+      overflow: hidden; }
+      main .about-header .abhead-bg-black .abhead-bigtitle {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+        main .about-header .abhead-bg-black .abhead-bigtitle .abhead-bigtitle-in {
+          font-size: 21vw;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          line-height: .5;
+          white-space: nowrap;
+          color: #1a1a1a;
+          font-family: "Montserrat Alternates", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 700; }
+    main .about-header .abhead-bg-white {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      background: #fff; }
+    main .about-header .abhead-content {
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      width: 50%;
+      bottom: 0;
+      width: 66.6666666667%;
+      margin: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      main .about-header .abhead-content .abhead-quote {
+        font-size: 42px;
+        font-size: 2.625rem;
+        font-size: 2.9vw;
+        line-height: 1.15;
+        font-weight: 300;
+        color: #23282a; }
+        main .about-header .abhead-content .abhead-quote .abhead-quote-quote strong {
+          color: #17C67B;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 900; }
+    main .about-header .abhead-photo {
+      background: #17C67B;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      right: 8.3333333333%;
+      bottom: 0;
+      overflow: hidden; }
+      main .about-header .abhead-photo .abhead-photo-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+      main .about-header .abhead-photo .abhead-photo-in {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #edebec; }
+        main .about-header .abhead-photo .abhead-photo-in .abhead-photo-para {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+          main .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden; }
+            main .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 101%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+  main .txtbloc {
+    padding: 140px 0;
+    position: relative; }
+    main .txtbloc.txtbloc_white {
+      background: #fff;
+      color: #23282a; }
+    main .txtbloc .txtbloc-item {
+      width: 66.6666666667%;
+      margin: auto; }
+      main .txtbloc .txtbloc-item:not(:last-child) {
+        margin-bottom: 100px; }
+      main .txtbloc .txtbloc-item .txtbloc-title {
+        font-size: 52px;
+        font-size: 3.25rem;
+        font-size: 3.5vw;
+        font-weight: 900;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 1em;
+        line-height: 1; }
+      main .txtbloc .txtbloc-item .clearfix .txtbloc-desc .markup .about-markup-1 {
+        font-weight: 700; }
+        main .txtbloc .txtbloc-item .clearfix .txtbloc-desc .markup .about-markup-1 strong {
+          color: #17C67B; }
+      main .txtbloc .txtbloc-item .clearfix .txtbloc-desc .markup .about-markup-2 {
+        color: #999; }
