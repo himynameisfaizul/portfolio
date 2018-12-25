@@ -12,6 +12,33 @@
     font-style: normal;
   }
 
+::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-track {
+    background: $primary-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $accent-color;
+}
+
+::-moz-selection {
+    background: $accent-color;
+    color: #fff
+}
+
+::selection {
+    background: $accent-color;
+    color: #fff
+}
+
+::-moz-selection {
+    background: $accent-color;
+    color: #fff
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -23,6 +50,7 @@ body{
     color: set-text-color($primary-color);
     font-family: Comfortaa,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.2;
+    overflow-x: hidden;
 }
 
 h1,
@@ -59,10 +87,8 @@ header{
     width: 100%;
 }
 
-main{
-    height: 100%;
-    overflow-x: hidden;
-    //padding: 10px; //temp
+
+    
 
     .home-header{
         //background: rgba(white, .2); //temp
@@ -86,7 +112,7 @@ main{
             justify-content: center;
             align-items: center;
             z-index: 1;
-            //overflow: hidden;
+            //overflow-x: hidden;
 
             @include mediaMd{
                 //background: $accent-color;
@@ -361,11 +387,12 @@ main{
         }
     }
 
-    .contact{
-        background: rgb(17, 17, 17);
-        height: 40vh;
+    .footer{
+        background: $primary-color;
+        height: 35vh;
         text-align: center;
         padding-top: 40px;
+        bottom: 0;
 
         .text-subtitle{
             background: none;
@@ -373,12 +400,12 @@ main{
 
         button{
             background: $accent-color;
-            padding: 20px 20px;
+            padding: 15px 20px;
             margin: 30px 0 40px 0;
             border: none;
 
             h5{
-                color: #fff;
+                color: $primary-color;
             }
         }
 
@@ -537,7 +564,7 @@ main{
 
     //about-content
     .txtbloc {
-        padding: 140px 0;
+        padding: 50px 0;
         position: relative;
 
         &.txtbloc_white{
@@ -552,23 +579,42 @@ main{
             &:not(:last-child) {
                 margin-bottom: 100px;
             }
-
-            .txtbloc-title{
-                font-size: 52px;
-                font-size: 3.25rem;
-                font-size: 3.5vw;
-                font-weight: 900;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                margin-bottom: 1em;
-                line-height: 1;
-            }
-    
+            
             .clearfix{
-    
+                display: block;
+
+                &:after {
+                    content: ".";
+                    display: block;
+                    clear: both;
+                    visibility: hidden;
+                    line-height: 0;
+                    height: 0;
+                }
+
                 .txtbloc-desc{
-    
+                    //background: $accent-color;
+                    float: left;
+                    width: 75%;
+                    padding-right: 100px;
+
                     .markup{
-    
+                        font-size: 16px;
+                        font-size: 1rem;
+                        line-height: 1.75;
+
+                        & > *{
+                            margin-bottom: 20px;
+                        }
+
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+
+                        & b, & strong{
+                            font-weight: 700;
+                        }
+
                         .about-markup-1{
                             font-weight: 700;
                             //font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -585,24 +631,141 @@ main{
                 }
     
                 .txtbloc-infos{
-    
-                    .infotxt{
-    
-                        .infotxt-title{
-    
-                        }
-    
-                        .infotxt-markup{
-                            
-                        }
-    
-                        .infotxt-markup_contact{
-    
-                        }
-                    }
+                    float: left;
+                    width: 25%;
+                }
+
+                .txtbloc-skills{
+                    float: left;
+                    width: 50%;
                 }
             }
     
         }
     }
-}
+
+    //general
+    .txtbloc-title{
+        font-size: 52px;
+        font-size: 3.25rem;
+        font-size: 3.5vw;
+        font-weight: 900;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 1em;
+        line-height: 1;
+    }
+
+    .infotxt{
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 1.5;
+
+        &:not(:last-child){
+            margin-bottom: 2em;
+        }
+    }
+
+    .infotxt-title{
+        color: #000;
+        text-transform: uppercase;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        position: relative;
+        padding-left: 16px;
+
+        & span{
+            display: block;
+            width: 12px;
+            height: 2px;
+            background: $accent-color;
+            position: absolute;
+            top: .7em;
+            left: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    }
+
+    .infotxt-markup{
+        //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        color: #999;
+
+        &.infotxt-markup_contact a{
+            white-space: nowrap;
+        }
+
+        & a{
+            color: $accent-color;
+            text-decoration: none;
+            -webkit-transition: .25s;
+            transition: .25s;
+            padding: 3px 10px 3px 3px
+        }
+
+        & a:hover{
+            color: white;
+            background: $accent-color;
+        }
+        
+    }
+
+
+    //contact
+
+    .contact{
+        //background: #999;
+        width: 100%;
+        height:100vh;
+        position:relative;
+        z-index:1;
+
+        .cntc-content{
+            //background: $accent-color;
+            text-decoration:none;
+            position: absolute;
+            height:50%;
+            width:50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index:10;
+            text-align: center;
+
+            h3{
+                margin: 20px 0;
+            }
+            
+
+            .txtbloc-title{
+                //color: yellow;
+                font-size: 7rem;
+                margin-bottom: 0.5em;
+                transform: rotate(-5deg);
+            }
+
+            .cntc-detail{
+                line-height: 1.5;
+
+                .infotxt-markup{
+                    color: $accent-color;
+
+                    & a{
+                        padding: 0 10px;
+                    }
+                }
+
+                i{  
+                    margin-top: 25px;
+                    font-size: 1.5rem;
+
+                    &:hover{
+                        color: $accent-color;
+                        @include easeOut;
+                    }
+                }
+
+            }
+        }
+
+    }
