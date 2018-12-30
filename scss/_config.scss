@@ -1,4 +1,4 @@
-$primary-color: #23282a;
+$primary-color: #252525;
 $accent-color: #17C67B;
 $show-home-image: true;
 $home-image: url(../img/headerbg.jpg);
@@ -25,7 +25,7 @@ $background-opacity:0.9;
                 right: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba($primary-color, $background-opacity);
+                background: rgba( $primary-color, $background-opacity);
             }
         }
         
@@ -55,10 +55,11 @@ $background-opacity:0.9;
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 769)and (max-width: 1170px){
+    @media screen and (min-width: 769px) and (max-width: 1170px){
         @content;
     }
 }
+
 @mixin mediaXl {
     @media screen and (min-width: 1171px){
         @content;

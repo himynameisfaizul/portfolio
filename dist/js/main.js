@@ -27,3 +27,41 @@ function toggleMenu(){
         showMenu = false;
     }
 }
+
+
+//portfolio bg img
+var image = document.querySelectorAll('div.shadow > img');
+
+//function utk check slide event
+function checkSlide(e){
+    
+    var wScroll = window.scrollY
+    console.log(wScroll);
+
+    switch(true){
+        case (wScroll < 50):
+            image[0].classList.add('opaque');
+            image[1].classList.remove('opaque');
+            image[2].classList.remove('opaque');
+        break;
+        case (wScroll >= 50 && wScroll < 100):
+            image[0].classList.remove('opaque');
+            image[1].classList.add('opaque');
+            image[2].classList.remove('opaque');
+        break;
+        case (wScroll >= 100 && wScroll < 120):
+            image[0].classList.remove('opaque');
+            image[1].classList.remove('opaque');
+            image[2].classList.add('opaque');
+        break;
+        default:
+            image[0].classList.add('opaque');
+            image[1].classList.remove('opaque');
+            image[2].classList.remove('opaque');
+        break;
+    }
+    //if menuNav.classList.add('show');
+}
+
+//initiate scroll event
+window.addEventListener('scroll', checkSlide);
