@@ -2,7 +2,6 @@
 @import "menu";
 @import "mobile";
 
-
 @import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
@@ -12,6 +11,10 @@
   src: url("../font/Intro.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+}
+
+button{
+  z-index: 80;
 }
 
 ::-webkit-scrollbar {
@@ -276,6 +279,11 @@ header {
     -ms-flex-pack: center;
     justify-content: center;
     z-index: 1;
+
+    @include mediaMd{
+      height: auto;
+      padding: 50px 0;
+    }
   
     &:nth-child(odd) {
       .card-img,
@@ -310,12 +318,8 @@ header {
       width: 66.6666666667%;
       z-index: 10;
 
-      @include mediaLg{
-        height: 335px;
-      }
-
       @include mediaMd{
-        height: 248px;
+        height: 250px;
       }
   
       .card-headline {
@@ -438,6 +442,16 @@ header {
                     width: 101%;
                     -webkit-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
+
+                    @include mediaLg{
+                      width: auto;
+                      height: 101%;
+                    }
+
+                    @include mediaMd{
+                      width: auto;
+                      height: 70%;
+                    }
                   }
                 }
               }
@@ -482,6 +496,16 @@ header {
       font-family: "Montserrat Alternates", "Helvetica Neue", Helvetica, Arial,
         sans-serif;
       text-transform: lowercase;
+
+      @include mediaLg{
+        font-size: 400px;
+        font-size: 25rem;
+      }
+
+      @include mediaMd{
+        font-size: 200px;
+        font-size: 12.5rem;
+      }
     }
   }
 
@@ -524,6 +548,10 @@ header {
   padding-top: 40px;
   bottom: 0;
 
+  @include mediaMd{
+    height: 30vh;
+  }
+
   .text-subtitle {
     background: none;
   }
@@ -550,6 +578,12 @@ header {
   height: 100vh;
   position: relative;
   z-index: 1;
+
+  @include mediaMd{
+    height: auto;
+    overflow: hidden;
+    padding-top: 200px;
+  }
 
   .abhead-bg-black {
     z-index: 0;
@@ -640,6 +674,24 @@ header {
     bottom: 0;
     overflow: hidden;
 
+    @include mediaLg{
+      right: 0;
+      left: 58.3333333333%;
+      top: 200px;
+    }
+
+    @include mediaMd{
+      position: relative;
+      right: auto;
+      left: auto;
+      top: auto;
+      bottom: auto;
+      width: 50%;
+      margin-left: 50%;
+      -webkit-transform: translateX(-40px);
+      transform: translateX(-40px);
+    }
+
     .abhead-photo-overlay {
       //background: darkgoldenrod;
       position: absolute;
@@ -662,12 +714,28 @@ header {
       overflow: hidden;
       background: #edebec;
 
+      @include mediaMd{
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+      }
+
       .abhead-photo-para {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+
+        @include mediaMd{
+          position: relative;
+          right: auto;
+          left: auto;
+          top: auto;
+          bottom: auto;
+        }
 
         .imgcrop {
           position: absolute;
@@ -676,6 +744,10 @@ header {
           bottom: 0;
           left: 0;
           overflow: hidden;
+          
+          @include mediaMd{
+            position: relative;
+          }
 
           img {
             position: absolute;
@@ -684,6 +756,20 @@ header {
             width: 101%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+
+            @include mediaMd{
+              position: relative;
+              right: auto;
+              left: auto;
+              top: auto;
+              bottom: auto;
+              width: auto;
+              height: auto;
+              -webkit-transform: none;
+              transform: none;
+              display: block;
+              width: 100%;
+            }
           }
         }
       }
@@ -727,6 +813,18 @@ header {
         width: 75%;
         padding-right: 100px;
 
+        @include mediaLg{
+          width: 100%;
+          padding: 0;
+          margin-bottom: 2em;
+        }
+
+        @include mediaMd{
+          width: 100%;
+          padding: 0;
+          margin-bottom: 2em;
+        }
+
         .markup {
           font-size: 16px;
           font-size: 1rem;
@@ -763,11 +861,31 @@ header {
       .txtbloc-infos {
         float: left;
         width: 25%;
+
+        @include mediaLg{
+          width: 100%;
+          padding: 0;
+        }
+
+        @include mediaMd{
+          width: 100%;
+          padding: 0;
+        }
       }
 
       .txtbloc-skills {
         float: left;
         width: 50%;
+
+        @include mediaLg{
+          width: 100%;
+          padding: 0;
+        }
+
+        @include mediaMd{
+          width: 100%;
+          padding: 0;
+        }
       }
     }
   }
@@ -782,6 +900,16 @@ header {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 1em;
   line-height: 1;
+
+  @include mediaLg{
+    font-size: 42px;
+    font-size: 2.625rem;
+  }
+
+  @include mediaMd{
+    font-size: 32px;
+    font-size: 2rem;
+  }
 }
 
 .infotxt {

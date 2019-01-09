@@ -29,39 +29,17 @@ function toggleMenu(){
 }
 
 
-//portfolio bg img
-var image = document.querySelectorAll('div.shadow > img');
+//scrollTo
+const scrl = document.querySelector('.scrl');
+scrl.addEventListener('click', smoothScrolling);
 
-//function utk check slide event
-function checkSlide(e){
-    
-    var wScroll = window.scrollY
-    console.log(wScroll);
-
-    switch(true){
-        case (wScroll < 50):
-            image[0].classList.add('opaque');
-            image[1].classList.remove('opaque');
-            image[2].classList.remove('opaque');
-        break;
-        case (wScroll >= 50 && wScroll < 100):
-            image[0].classList.remove('opaque');
-            image[1].classList.add('opaque');
-            image[2].classList.remove('opaque');
-        break;
-        case (wScroll >= 100 && wScroll < 120):
-            image[0].classList.remove('opaque');
-            image[1].classList.remove('opaque');
-            image[2].classList.add('opaque');
-        break;
-        default:
-            image[0].classList.add('opaque');
-            image[1].classList.remove('opaque');
-            image[2].classList.remove('opaque');
-        break;
-    }
-    //if menuNav.classList.add('show');
+function smoothScrolling(event){
+const target = document.querySelector('.target');
+const body = document.body;
+//console.log(body);
+   event.preventDefault();
+   window.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth"
+   });
 }
-
-//initiate scroll event
-window.addEventListener('scroll', checkSlide);

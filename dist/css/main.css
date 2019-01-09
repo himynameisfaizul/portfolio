@@ -117,6 +117,9 @@
   font-weight: 400;
   font-style: normal; }
 
+button {
+  z-index: 80; }
+
 ::-webkit-scrollbar {
   width: 10px; }
 
@@ -330,6 +333,10 @@ header {
   -ms-flex-pack: center;
   justify-content: center;
   z-index: 1; }
+  @media screen and (max-width: 768px) {
+    .scroll-container .card {
+      height: auto;
+      padding: 50px 0; } }
   .scroll-container .card:nth-child(odd) .card-img,
   .scroll-container .card:nth-child(odd) .card-stroke,
   .scroll-container .card:nth-child(odd) .card-number {
@@ -350,12 +357,9 @@ header {
     height: 56%;
     width: 66.6666666667%;
     z-index: 10; }
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
-      .scroll-container .card .card-link {
-        height: 335px; } }
     @media screen and (max-width: 768px) {
       .scroll-container .card .card-link {
-        height: 248px; } }
+        height: 250px; } }
     .scroll-container .card .card-link .card-headline {
       position: absolute;
       top: 50%;
@@ -454,6 +458,14 @@ header {
                   width: 101%;
                   -webkit-transform: translate(-50%, -50%);
                   transform: translate(-50%, -50%); }
+                  @media screen and (min-width: 769px) and (max-width: 1170px) {
+                    .scroll-container .card .card-link .card-img .card-img-in .card-img-trans .card-img-opa .card-img-para .imgcrop img {
+                      width: auto;
+                      height: 101%; } }
+                  @media screen and (max-width: 768px) {
+                    .scroll-container .card .card-link .card-img .card-img-in .card-img-trans .card-img-opa .card-img-para .imgcrop img {
+                      width: auto;
+                      height: 70%; } }
     .scroll-container .card .card-link:hover .card-img .card-img-in {
       -webkit-filter: grayscale(0);
       filter: grayscale(0); }
@@ -478,6 +490,14 @@ header {
     font-weight: 700;
     font-family: "Montserrat Alternates", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: lowercase; }
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+      .scroll-container .card .card-bigtitle {
+        font-size: 400px;
+        font-size: 25rem; } }
+    @media screen and (max-width: 768px) {
+      .scroll-container .card .card-bigtitle {
+        font-size: 200px;
+        font-size: 12.5rem; } }
 
 .scroll-container #crossfadeimage {
   position: absolute;
@@ -509,6 +529,9 @@ header {
   text-align: center;
   padding-top: 40px;
   bottom: 0; }
+  @media screen and (max-width: 768px) {
+    .footer {
+      height: 30vh; } }
   .footer .text-subtitle {
     background: none; }
   .footer button {
@@ -526,6 +549,11 @@ header {
   height: 100vh;
   position: relative;
   z-index: 1; }
+  @media screen and (max-width: 768px) {
+    .about-header {
+      height: auto;
+      overflow: hidden;
+      padding-top: 200px; } }
   .about-header .abhead-bg-black {
     z-index: 0;
     position: absolute;
@@ -595,6 +623,22 @@ header {
     right: 8.3333333333%;
     bottom: 0;
     overflow: hidden; }
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+      .about-header .abhead-photo {
+        right: 0;
+        left: 58.3333333333%;
+        top: 200px; } }
+    @media screen and (max-width: 768px) {
+      .about-header .abhead-photo {
+        position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        width: 50%;
+        margin-left: 50%;
+        -webkit-transform: translateX(-40px);
+        transform: translateX(-40px); } }
     .about-header .abhead-photo .abhead-photo-overlay {
       position: absolute;
       top: 0;
@@ -609,12 +653,26 @@ header {
       height: 100%;
       overflow: hidden;
       background: #edebec; }
+      @media screen and (max-width: 768px) {
+        .about-header .abhead-photo .abhead-photo-in {
+          position: relative;
+          right: auto;
+          left: auto;
+          top: auto;
+          bottom: auto; } }
       .about-header .abhead-photo .abhead-photo-in .abhead-photo-para {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%; }
+        @media screen and (max-width: 768px) {
+          .about-header .abhead-photo .abhead-photo-in .abhead-photo-para {
+            position: relative;
+            right: auto;
+            left: auto;
+            top: auto;
+            bottom: auto; } }
         .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop {
           position: absolute;
           top: 0;
@@ -622,6 +680,9 @@ header {
           bottom: 0;
           left: 0;
           overflow: hidden; }
+          @media screen and (max-width: 768px) {
+            .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop {
+              position: relative; } }
           .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop img {
             position: absolute;
             top: 50%;
@@ -629,6 +690,19 @@ header {
             width: 101%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+            @media screen and (max-width: 768px) {
+              .about-header .abhead-photo .abhead-photo-in .abhead-photo-para .imgcrop img {
+                position: relative;
+                right: auto;
+                left: auto;
+                top: auto;
+                bottom: auto;
+                width: auto;
+                height: auto;
+                -webkit-transform: none;
+                transform: none;
+                display: block;
+                width: 100%; } }
 
 .txtbloc {
   padding: 50px 0;
@@ -654,6 +728,16 @@ header {
         float: left;
         width: 75%;
         padding-right: 100px; }
+        @media screen and (min-width: 769px) and (max-width: 1170px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-desc {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 2em; } }
+        @media screen and (max-width: 768px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-desc {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 2em; } }
         .txtbloc .txtbloc-item .clearfix .txtbloc-desc .markup {
           font-size: 16px;
           font-size: 1rem;
@@ -674,9 +758,25 @@ header {
       .txtbloc .txtbloc-item .clearfix .txtbloc-infos {
         float: left;
         width: 25%; }
+        @media screen and (min-width: 769px) and (max-width: 1170px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-infos {
+            width: 100%;
+            padding: 0; } }
+        @media screen and (max-width: 768px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-infos {
+            width: 100%;
+            padding: 0; } }
       .txtbloc .txtbloc-item .clearfix .txtbloc-skills {
         float: left;
         width: 50%; }
+        @media screen and (min-width: 769px) and (max-width: 1170px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-skills {
+            width: 100%;
+            padding: 0; } }
+        @media screen and (max-width: 768px) {
+          .txtbloc .txtbloc-item .clearfix .txtbloc-skills {
+            width: 100%;
+            padding: 0; } }
 
 .txtbloc-title {
   font-size: 52px;
@@ -686,6 +786,14 @@ header {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 1em;
   line-height: 1; }
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    .txtbloc-title {
+      font-size: 42px;
+      font-size: 2.625rem; } }
+  @media screen and (max-width: 768px) {
+    .txtbloc-title {
+      font-size: 32px;
+      font-size: 2rem; } }
 
 .infotxt {
   font-size: 14px;
